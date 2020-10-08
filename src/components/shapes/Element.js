@@ -9,7 +9,7 @@ const Element = ({ data }) => {
   const {
     _class,
     frame: { x, y, height, width },
-    style: { fills, borders, ...restStyle },
+    style: { fills, borders, textStyle, ...restStyle },
     attributedString,
     name,
   } = data || {};
@@ -41,17 +41,16 @@ const Element = ({ data }) => {
       />
     );
   } else if (_class === 'text') {
-    const {
-      textStyle: {
-        encodedAttributes: {
-          MSAttributedStringColorAttribute: color,
-          MSAttributedStringFontAttribute: fontAttr,
-          MSAttributedStringTextTransformAttribute: fontTransform,
-        },
-      },
-    } = restStyle || {};
-
     const { string } = attributedString || {};
+    const {
+      encodedAttributes: {
+        MSAttributedStringFontAttribute: {
+          attributes: { size, name: fontFamily },
+        },
+        MSAttributedStringColorAttribute: textColor,
+        MSAttributedStringTextTransformAttribute: textTransformUppercase,
+      },
+    } = textStyle || {};
 
     return (
       <Text
@@ -61,6 +60,10 @@ const Element = ({ data }) => {
         x={x}
         color={color}
         text={string}
+        fontSize={size}
+        fontFamily={fontFamily}
+        color={textColor}
+        textTransformUppercase={!!textTransformUppercase}
       />
     );
   }

@@ -18,6 +18,10 @@ const RCEText = styled(motion.div)`
   left: ${({ x }) => x};
 
   color: ${({ color }) => getRgbaColorFromDecimal(color)};
+  font-size: ${({ fontSize }) => getPixelsFromNumber(fontSize)};
+  text-transform: ${({ textTransformUppercase }) =>
+    textTransformUppercase ? 'uppercase' : 'initial'};
+  font-family: ${({ fontFamily }) => fontFamily};
 `;
 
 const Text = ({ text, ...props }) => {
