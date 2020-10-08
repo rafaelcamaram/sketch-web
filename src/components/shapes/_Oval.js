@@ -22,6 +22,7 @@ const RCEOval = styled(motion.div)`
     `${getPixelsFromNumber(thickness)} solid ${getRgbaColorFromDecimal(
       borderColor
     )}`};
+  box-sizing: border-box;
   background-color: ${({ color }) => getRgbaColorFromDecimal(color)};
 `;
 
@@ -38,4 +39,4 @@ const Oval = (props) => {
   );
 };
 
-export default Oval;
+export default withHoverElement(Oval);

@@ -22,6 +22,7 @@ const RCERectangle = styled(motion.div)`
     `${getPixelsFromNumber(thickness)} solid ${getRgbaColorFromDecimal(
       borderColor
     )}`};
+  box-sizing: border-box;
 `;
 const Rectangle = (props) => {
   return (
@@ -35,4 +36,4 @@ const Rectangle = (props) => {
   );
 };
 
-export default Rectangle;
+export default withHoverElement(Rectangle);
