@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./product-cover.png" alt="Sketch Coding Test.">
+<!--   <img src="./product-cover.png" alt="Sketch Coding Test."> -->
 </div>
 
 ---
