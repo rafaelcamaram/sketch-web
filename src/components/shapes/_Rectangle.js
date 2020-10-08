@@ -24,6 +24,7 @@ const RCERectangle = styled(motion.div)`
     )}`};
   box-sizing: border-box;
 `;
+
 const Rectangle = (props) => {
   return (
     <RCERectangle
