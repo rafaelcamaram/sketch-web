@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import styled from 'styled-components';
 
 /* Utils */
@@ -32,15 +31,9 @@ const ElementWrapper = styled.div`
 
 const withHoverElement = (Component) => {
   return (props) => {
-    const [isHover, setIsHover] = useState(false);
+    const onHover = (e) => {};
 
-    const onHover = (e) => {
-      // setIsHover(true);
-    };
-
-    const onHoverEnd = (e) => {
-      // setIsHover(false);
-    };
+    const onHoverEnd = (e) => {};
 
     return (
       <ElementWrapper>

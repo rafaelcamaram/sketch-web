@@ -9,37 +9,26 @@ const Element = ({ data }) => {
   const {
     _class,
     frame: { x, y, height, width },
-    style: { fills, borders, textStyle, ...restStyle },
+    style: { fills, borders, textStyle },
     attributedString,
-    name,
   } = data || {};
   const { color } = fills[0] || {};
   const { color: borderColor, thickness } = borders[0] || {};
 
+  const baseProps = {
+    width: width,
+    height: height,
+    y: y,
+    x: x,
+    color: color,
+    borderColor: borderColor,
+    thickness: thickness,
+  };
+
   if (_class === 'rectangle') {
-    return (
-      <Rectangle
-        width={width}
-        height={height}
-        y={y}
-        x={x}
-        color={color}
-        borderColor={borderColor}
-        thickness={thickness}
-      />
-    );
+    return <Rectangle {...baseProps} />;
   } else if (_class === 'oval') {
-    return (
-      <Oval
-        width={width}
-        height={height}
-        y={y}
-        x={x}
-        color={color}
-        borderColor={borderColor}
-        thickness={thickness}
-      />
-    );
+    return <Oval {...baseProps} />;
   } else if (_class === 'text') {
     const { string } = attributedString || {};
     const {
@@ -54,11 +43,7 @@ const Element = ({ data }) => {
 
     return (
       <Text
-        width={width}
-        height={height}
-        y={y}
-        x={x}
-        color={color}
+        {...baseProps}
         text={string}
         fontSize={size}
         fontFamily={fontFamily}
