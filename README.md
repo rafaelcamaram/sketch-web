@@ -18,7 +18,7 @@ $ npm install
 $ npm start
 ```
 
-Then, you'll get a working version of Sketch Cloud (Sketch Frontend Coding Test) running in your port 3000 (or in any other if the first one was already taken).
+Then, you'll get a working version of *Sketch Web* running in your port 3000 (or in any other if the first one was already taken).
 
 ---
 
