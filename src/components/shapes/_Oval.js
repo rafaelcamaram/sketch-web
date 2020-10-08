@@ -14,8 +14,8 @@ const RCEOval = styled(motion.div)`
   height: ${({ height }) => getPixelsFromNumber(height)};
 
   position: absolute;
-  top: ${({ axisY }) => axisY};
-  left: ${({ axisX }) => axisX};
+  top: ${({ axisY }) => getPixelsFromNumber(axisY)};
+  left: ${({ axisX }) => getPixelsFromNumber(axisX)};
 
   border-radius: ${({ width }) => getPixelsFromNumber(width / 2)};
   border: ${({ borderColor, thickness }) =>

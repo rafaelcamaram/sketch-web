@@ -9,32 +9,26 @@ import withHoverElement from 'components/hoc/withHoverElement';
 import { getRgbaColorFromDecimal } from 'utils/colors';
 import { getPixelsFromNumber } from 'utils/units';
 
-const RCERectangle = styled(motion.div)`
+const RCEImage = styled(motion.img)`
   width: ${({ width }) => getPixelsFromNumber(width)};
   height: ${({ height }) => getPixelsFromNumber(height)};
 
   position: absolute;
   top: ${({ axisY }) => getPixelsFromNumber(axisY)};
   left: ${({ axisX }) => getPixelsFromNumber(axisX)};
-
-  background-color: ${({ color }) => getRgbaColorFromDecimal(color)};
-  border: ${({ borderColor, thickness }) =>
-    `${getPixelsFromNumber(thickness)} solid ${getRgbaColorFromDecimal(
-      borderColor
-    )}`};
-  box-sizing: border-box;
 `;
 
-const Rectangle = (props) => {
+const Image = (props) => {
   return (
-    <RCERectangle
+    <RCEImage
       {...props}
       drag
+      dragMomentum={false}
       onDrag={(event, info) => {
-        //console.log(info.point.x, info.point.y)
+        // console.log(info.point.x, info.point.y)
       }}
     />
   );
 };
 
-export default withHoverElement(Rectangle);
+export default withHoverElement(Image);
