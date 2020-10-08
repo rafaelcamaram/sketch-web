@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Rect, Group } from 'react-konva';
 
 const withHoverElement = (Component) => {
   return (props) => {
@@ -21,13 +20,13 @@ const withHoverElement = (Component) => {
 
     if (isHover) {
       return (
-        <Group>
+        <div>
           <Component
             {...props}
             onMouseEnter={onHover}
             onMouseLeave={onHoverEnd}
           />
-          <Rect
+          {/* <Rect
             x={props.x}
             y={props.y}
             width={props.width}
@@ -38,8 +37,8 @@ const withHoverElement = (Component) => {
             stroke="rgba(252, 206, 28, 1)"
             strokeWidth={1}
             onMouseLeave={onHoverEnd}
-          ></Rect>
-        </Group>
+          ></Rect> */}
+        </div>
       );
     }
     return (
