@@ -18,8 +18,8 @@ const Element = ({ data }) => {
   const baseProps = {
     width: width,
     height: height,
-    y: y,
-    x: x,
+    axisY: y,
+    axisX: x,
     color: color,
     borderColor: borderColor,
     thickness: thickness,

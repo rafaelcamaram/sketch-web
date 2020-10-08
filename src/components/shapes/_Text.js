@@ -14,8 +14,8 @@ const RCEText = styled(motion.div)`
   height: ${({ height }) => getPixelsFromNumber(height)};
 
   position: absolute;
-  top: ${({ y }) => y};
-  left: ${({ x }) => x};
+  top: ${({ axisY }) => getPixelsFromNumber(axisY)};
+  left: ${({ axisX }) => getPixelsFromNumber(axisX)};
 
   color: ${({ color }) => getRgbaColorFromDecimal(color)};
   font-size: ${({ fontSize }) => getPixelsFromNumber(fontSize)};

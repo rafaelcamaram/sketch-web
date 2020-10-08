@@ -9,8 +9,8 @@ const HoverMarkupElement = styled.div`
   height: ${({ height }) => getPixelsFromNumber(height)};
 
   position: absolute;
-  top: ${({ y }) => getPixelsFromNumber(y)};
-  left: ${({ x }) => getPixelsFromNumber(x)};
+  top: ${({ axisY }) => getPixelsFromNumber(axisY)};
+  left: ${({ axisX }) => getPixelsFromNumber(axisX)};
 
   border: 1px dashed rgba(252, 206, 28, 1);
   cursor: pointer;
@@ -45,8 +45,8 @@ const withHoverElement = (Component) => {
         <HoverMarkupElement
           width={props.width}
           height={props.height}
-          x={props.x}
-          y={props.y}
+          axisX={props.axisX}
+          axisY={props.axisY}
         ></HoverMarkupElement>
       </ElementWrapper>
     );
